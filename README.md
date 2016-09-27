@@ -12,7 +12,7 @@ You can install blackpearl via NPM
   $ sudo npm install -g blackpearl
 ```
 
-IMPORTANTE: You need to have installed mplayer
+IMPORTANT: You need to have installed mplayer
 
 # Using blackpearl
 
