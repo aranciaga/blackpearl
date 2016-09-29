@@ -1,6 +1,6 @@
 {
   "name": "blackpearl",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Watch movies and series from The Pirate Bay, Harrr!",
   "main": "index.js",
   "scripts": {
@@ -34,6 +34,6 @@
     "download": "^4.4.3",
     "opensubtitles-api": "^2.4.0",
     "peerflix": "^0.32.4",
-    "pirata": "0.0.2"
+    "pirata": "*"
   }
 }
