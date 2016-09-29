@@ -35,6 +35,9 @@ Blackpearl support subtitles as well, just type --sub [spa,fre,etc] at the end o
 
 ## Changelog
 
+**0.0.5**
++ Error handling
+
 **0.0.4**
 + [pirata](https://github.com/rainbowintheshell/pirata) for TPB search
 
