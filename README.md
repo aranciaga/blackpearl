@@ -32,6 +32,12 @@ $ blackpearl search "mr robot s01e01"
 
 Blackpearl support subtitles as well, just type --sub [spa,fre,etc] at the end of the command
 
+
+## Changelog
+
+**0.0.4**
++ [pirata](https://github.com/rainbowintheshell/pirata) for TPB search
+
 ## License and other stuffs
 
 Just use it.
