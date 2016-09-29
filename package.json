@@ -34,6 +34,6 @@
     "download": "^4.4.3",
     "opensubtitles-api": "^2.4.0",
     "peerflix": "^0.32.4",
-    "thepiratebay": "^1.2.0"
+    "pirata": "0.0.2"
   }
 }
