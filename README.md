@@ -19,7 +19,7 @@ or if you are using Arch Linux
   $ yaourt -S blackpearl
 ```
 
-IMPORTANT: You need to have installed mpv
+**IMPORTANT:** You need to have installed mpv, in case you're using Arch, mpv is installed automatically.
 
 # Using blackpearl
 
