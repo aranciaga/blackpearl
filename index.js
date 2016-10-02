@@ -19,7 +19,7 @@ var help_screen = function(){
 	  	console.log(chalk.yellow(data));
 		console.log(chalk.cyan("Usage: blackpearl search [name]"));
 		console.log(chalk.red("Subtitles: --sub [spa,eng,fre,etc]"));
-		process.exit() 
+		process.exit(); 
 	}); 
 	
 }
