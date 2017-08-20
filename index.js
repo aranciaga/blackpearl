@@ -10,6 +10,7 @@ var name     = process.argv[3];
 var actions  = ["search"];
     
 var subs_language;
+var url;
 
 var help_screen = function(){
 
@@ -19,6 +20,7 @@ var help_screen = function(){
 	  	console.log(chalk.yellow(data));
 		console.log(chalk.cyan("Usage: blackpearl search [name]"));
 		console.log(chalk.red("Subtitles: --sub [spa,eng,fre,etc]"));
+		console.log(chalk.red("Pirate bay proxy url: --url [https://pirateproxy.cam]"));
 		process.exit(); 
 	}); 
 	
@@ -32,8 +34,13 @@ if ( process.argv.indexOf("--sub") != -1 && process.argv[ process.argv.indexOf("
 	subs_language = process.argv[ process.argv.indexOf("--sub") + 1 ];
 }
 
+if ( process.argv.indexOf("--url") != -1 && process.argv[ process.argv.indexOf("--url") + 1 ] ) {
+	url = process.argv[ process.argv.indexOf("--url") + 1 ];
+}
+
+
 async.waterfall([
-    async.apply(tpb.search, name, subs_language),
+    async.apply(tpb.search, name, subs_language, url),
     cli.showResults,
     cli.chooseResult,
     subs.searchSub,
