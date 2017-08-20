@@ -8,9 +8,12 @@ var chalk    = require('chalk');
 var action   = process.argv[2];
 var name     = process.argv[3];
 var actions  = ["search"];
-    
-var subs_language;
-var url;
+
+var settings = {};
+
+if (fs.existsSync(process.env['HOME']+'/.config/blackpearl/config')){
+  settings = require(process.env['HOME']+'/.config/blackpearl/config');
+}
 
 var help_screen = function(){
 
@@ -31,16 +34,16 @@ if( actions.indexOf(action) == -1){
 }
 
 if ( process.argv.indexOf("--sub") != -1 && process.argv[ process.argv.indexOf("--sub") + 1 ] ) {
-	subs_language = process.argv[ process.argv.indexOf("--sub") + 1 ];
+	settings.subs_language = process.argv[ process.argv.indexOf("--sub") + 1 ];
 }
 
 if ( process.argv.indexOf("--url") != -1 && process.argv[ process.argv.indexOf("--url") + 1 ] ) {
-	url = process.argv[ process.argv.indexOf("--url") + 1 ];
+	settings.url = process.argv[ process.argv.indexOf("--url") + 1 ];
 }
 
 
 async.waterfall([
-    async.apply(tpb.search, name, subs_language, url),
+    async.apply(tpb.search, name, settings.subs_language, settings.url),
     cli.showResults,
     cli.chooseResult,
     subs.searchSub,
