@@ -8,8 +8,12 @@ var chalk    = require('chalk');
 var action   = process.argv[2];
 var name     = process.argv[3];
 var actions  = ["search"];
-    
-var subs_language;
+
+var settings = {};
+
+if (fs.existsSync(process.env['HOME']+'/.config/blackpearl/config')){
+  settings = require(process.env['HOME']+'/.config/blackpearl/config');
+}
 
 var help_screen = function(){
 
@@ -19,6 +23,7 @@ var help_screen = function(){
 	  	console.log(chalk.yellow(data));
 		console.log(chalk.cyan("Usage: blackpearl search [name]"));
 		console.log(chalk.red("Subtitles: --sub [spa,eng,fre,etc]"));
+		console.log(chalk.red("Pirate bay proxy url: --url [https://pirateproxy.cam]"));
 		process.exit(); 
 	}); 
 	
@@ -29,11 +34,16 @@ if( actions.indexOf(action) == -1){
 }
 
 if ( process.argv.indexOf("--sub") != -1 && process.argv[ process.argv.indexOf("--sub") + 1 ] ) {
-	subs_language = process.argv[ process.argv.indexOf("--sub") + 1 ];
+	settings.subs_language = process.argv[ process.argv.indexOf("--sub") + 1 ];
 }
 
+if ( process.argv.indexOf("--url") != -1 && process.argv[ process.argv.indexOf("--url") + 1 ] ) {
+	settings.url = process.argv[ process.argv.indexOf("--url") + 1 ];
+}
+
+
 async.waterfall([
-    async.apply(tpb.search, name, subs_language),
+    async.apply(tpb.search, name, settings.subs_language, settings.url),
     cli.showResults,
     cli.chooseResult,
     subs.searchSub,
