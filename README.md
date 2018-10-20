@@ -6,30 +6,32 @@ Watch movies and series from The Pirate Bay. Harrr!
 
 # Installation
 
-You can install blackpearl via NPM
+NPM:
 
 ```
   $ sudo npm install -g blackpearl
 ```
 
-or if you are using Arch Linux
+Arch Linux:
 
 
 ```
   $ yaourt -S blackpearl
 ```
 
-**IMPORTANT:** You need to have installed mpv, in case you're using Arch, mpv is installed automatically.
+**IMPORTANT:** Make sure you have mpv installed
 
 # Using blackpearl
 
-Controlling the ship is pretty easy. Just type
+Time to control the ship!
+
+Movies:
 
 ```
 $ blackpearl search "taxi driver"
 ```
 
-or for series
+Series:
 
 ```
 $ blackpearl search "mr robot s01e01"
@@ -37,10 +39,14 @@ $ blackpearl search "mr robot s01e01"
 
 ## Subtitles
 
-Blackpearl support subtitles as well, just type --sub [spa,fre,etc] at the end of the command
+Type --sub [spa,fre,etc] at the end of the command
 
 
 ## Changelog
+
+**0.0.6**
++ Code refactoring
++ Subtitles fix
 
 **0.0.5**
 + Error handling
